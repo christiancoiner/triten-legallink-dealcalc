@@ -1,0 +1,227 @@
+<h2 class="sr-only">Interactive financial projection comparing TortFlow joint venture versus license model over 3 years with adjustable assumptions</h2>
+
+<div style="padding: 1rem 0;">
+
+<div style="margin-bottom: 1.5rem;">
+  <h2 style="margin: 0 0 4px;">TortFlow: JV vs. License — 3-year projection</h2>
+  <p style="font-size: 13px; color: var(--color-text-secondary); margin: 0;">5 deals × 200 cases/yr · mass tort · 4-yr settlement delay</p>
+</div>
+
+<div style="background: var(--color-background-secondary); padding: 1rem 1.25rem; border-radius: var(--border-radius-lg); margin-bottom: 1.5rem;">
+  <p style="font-size: 12px; font-weight: 500; color: var(--color-text-secondary); margin: 0 0 12px; text-transform: uppercase; letter-spacing: 0.5px;">Adjust assumptions</p>
+  <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px;">
+    <div>
+      <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 4px;">
+        <label>Avg case value</label>
+        <span id="cv-out" style="font-weight: 500;">$150,000</span>
+      </div>
+      <input type="range" id="cv" min="50000" max="300000" step="10000" value="150000" />
+    </div>
+    <div>
+      <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 4px;">
+        <label>Success rate</label>
+        <span id="sr-out" style="font-weight: 500;">65%</span>
+      </div>
+      <input type="range" id="sr" min="40" max="90" step="5" value="65" />
+    </div>
+    <div>
+      <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 4px;">
+        <label>Settlement delay (yrs)</label>
+        <span id="sd-out" style="font-weight: 500;">4</span>
+      </div>
+      <input type="range" id="sd" min="2" max="7" step="1" value="4" />
+    </div>
+    <div>
+      <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 4px;">
+        <label>Discount rate</label>
+        <span id="dr-out" style="font-weight: 500;">10%</span>
+      </div>
+      <input type="range" id="dr" min="5" max="20" step="1" value="10" />
+    </div>
+  </div>
+</div>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 1rem;">
+
+  <div style="background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-left: 3px solid #7F77DD; border-radius: 0; border-top-right-radius: var(--border-radius-lg); border-bottom-right-radius: var(--border-radius-lg); padding: 14px 16px;">
+    <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 12px;">
+      <span style="font-size: 11px; font-weight: 500; color: #534AB7; background: #EEEDFE; padding: 2px 8px; border-radius: var(--border-radius-md); text-transform: uppercase; letter-spacing: 0.5px;">Scenario 1</span>
+      <span style="font-weight: 500; font-size: 14px;">Joint venture</span>
+    </div>
+    <p style="font-size: 12px; color: var(--color-text-secondary); margin: 0 0 12px; line-height: 1.5;">Free TortFlow · 25% of mkt margin to TortFlow · 4% backend (10% of 40%)</p>
+    <div style="display: grid; grid-template-columns: 1fr; gap: 8px;">
+      <div style="padding: 10px; background: var(--color-background-secondary); border-radius: var(--border-radius-md);">
+        <p style="font-size: 11px; color: var(--color-text-secondary); margin: 0 0 2px;">3-yr cash (in window)</p>
+        <p id="s1-cash" style="font-size: 20px; font-weight: 500; margin: 0;">$8.9M</p>
+      </div>
+      <div style="padding: 10px; background: var(--color-background-secondary); border-radius: var(--border-radius-md);">
+        <p style="font-size: 11px; color: var(--color-text-secondary); margin: 0 0 2px;">Total lifetime (undiscounted)</p>
+        <p id="s1-total" style="font-size: 20px; font-weight: 500; margin: 0;">$20.6M</p>
+      </div>
+      <div style="padding: 10px; background: #EEEDFE; border-radius: var(--border-radius-md);">
+        <p style="font-size: 11px; color: #534AB7; margin: 0 0 2px;">NPV (full lifetime)</p>
+        <p id="s1-npv" style="font-size: 20px; font-weight: 500; margin: 0; color: #3C3489;">$14.0M</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-left: 3px solid #1D9E75; border-radius: 0; border-top-right-radius: var(--border-radius-lg); border-bottom-right-radius: var(--border-radius-lg); padding: 14px 16px;">
+    <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 12px;">
+      <span style="font-size: 11px; font-weight: 500; color: #0F6E56; background: #E1F5EE; padding: 2px 8px; border-radius: var(--border-radius-md); text-transform: uppercase; letter-spacing: 0.5px;">Scenario 2</span>
+      <span style="font-weight: 500; font-size: 14px;">License + MCH firm of record</span>
+    </div>
+    <p style="font-size: 12px; color: var(--color-text-secondary); margin: 0 0 12px; line-height: 1.5;">$395 blended TortFlow fee · 20% backend (50% of 40%) · Co-counsel covers carry</p>
+    <div style="display: grid; grid-template-columns: 1fr; gap: 8px;">
+      <div style="padding: 10px; background: var(--color-background-secondary); border-radius: var(--border-radius-md);">
+        <p style="font-size: 11px; color: var(--color-text-secondary); margin: 0 0 2px;">3-yr cash (in window)</p>
+        <p id="s2-cash" style="font-size: 20px; font-weight: 500; margin: 0; color: var(--color-text-danger);">-$27.2M</p>
+      </div>
+      <div style="padding: 10px; background: var(--color-background-secondary); border-radius: var(--border-radius-md);">
+        <p style="font-size: 11px; color: var(--color-text-secondary); margin: 0 0 2px;">Total lifetime (undiscounted)</p>
+        <p id="s2-total" style="font-size: 20px; font-weight: 500; margin: 0;">$31.3M</p>
+      </div>
+      <div style="padding: 10px; background: #E1F5EE; border-radius: var(--border-radius-md);">
+        <p style="font-size: 11px; color: #0F6E56; margin: 0 0 2px;">NPV (full lifetime)</p>
+        <p id="s2-npv" style="font-size: 20px; font-weight: 500; margin: 0; color: #085041;">$10.7M</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div style="background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 14px 16px; margin-bottom: 1rem;">
+  <p style="font-size: 12px; font-weight: 500; color: var(--color-text-secondary); margin: 0 0 8px; text-transform: uppercase; letter-spacing: 0.5px;">Cash flow by year</p>
+  <table id="cashflow" style="width: 100%; font-size: 13px; border-collapse: collapse;">
+    <thead>
+      <tr style="border-bottom: 0.5px solid var(--color-border-tertiary);">
+        <th style="text-align: left; padding: 6px 4px; font-weight: 500; color: var(--color-text-secondary);">Year</th>
+        <th style="text-align: right; padding: 6px 4px; font-weight: 500; color: #534AB7;">JV</th>
+        <th style="text-align: right; padding: 6px 4px; font-weight: 500; color: #0F6E56;">License</th>
+        <th style="text-align: right; padding: 6px 4px; font-weight: 500; color: var(--color-text-secondary);">Δ</th>
+      </tr>
+    </thead>
+    <tbody id="cashflow-body"></tbody>
+  </table>
+</div>
+
+<div id="winner-box" style="padding: 12px 16px; background: #EEEDFE; border-radius: var(--border-radius-lg); border-left: 3px solid #7F77DD;">
+  <p style="font-size: 12px; font-weight: 500; color: #534AB7; margin: 0 0 4px; text-transform: uppercase; letter-spacing: 0.5px;">Recommendation under current assumptions</p>
+  <p id="winner-text" style="font-size: 14px; margin: 0; color: #3C3489; line-height: 1.5;">Loading...</p>
+</div>
+
+</div>
+
+<script>
+const CASES_PER_YEAR = 1000;
+const COST_Y1 = 8000;
+const SALE_Y1 = 12000;
+const CPL_INFL = 0.08;
+const SALE_INFL = 0.05;
+const TORTFLOW_BLENDED = 395;
+
+function fmt(n) {
+  const abs = Math.abs(n);
+  if (abs >= 1e6) return (n < 0 ? '-' : '') + '$' + (abs/1e6).toFixed(1) + 'M';
+  if (abs >= 1e3) return (n < 0 ? '-' : '') + '$' + (abs/1e3).toFixed(0) + 'K';
+  return (n < 0 ? '-' : '') + '$' + abs.toFixed(0);
+}
+
+function compute() {
+  const cv = +document.getElementById('cv').value;
+  const sr = +document.getElementById('sr').value / 100;
+  const sd = +document.getElementById('sd').value;
+  const dr = +document.getElementById('dr').value / 100;
+
+  document.getElementById('cv-out').textContent = '$' + cv.toLocaleString();
+  document.getElementById('sr-out').textContent = (sr*100).toFixed(0) + '%';
+  document.getElementById('sd-out').textContent = sd;
+  document.getElementById('dr-out').textContent = (dr*100).toFixed(0) + '%';
+
+  // Build year-by-year cash flow for 7 years (so backends materialize)
+  const horizonYears = sd + 3;
+  const s1 = new Array(horizonYears + 1).fill(0);
+  const s2 = new Array(horizonYears + 1).fill(0);
+
+  for (let y = 1; y <= 3; y++) {
+    const cost = COST_Y1 * Math.pow(1 + CPL_INFL, y - 1);
+    const sale = SALE_Y1 * Math.pow(1 + SALE_INFL, y - 1);
+
+    // S1: marketing margin × (1 - 25%)
+    const mktMargin = (sale - cost) * CASES_PER_YEAR;
+    s1[y] += mktMargin * 0.75;
+
+    // S1 backend: 4% of gross × success
+    const s1Backend = CASES_PER_YEAR * sr * cv * 0.04;
+    if (y + sd <= horizonYears) s1[y + sd] += s1Backend;
+
+    // S2: pure marketing investment (negative cash)
+    const s2Cost = (cost + TORTFLOW_BLENDED) * CASES_PER_YEAR;
+    s2[y] -= s2Cost;
+
+    // S2 backend: 20% of gross × success
+    const s2Backend = CASES_PER_YEAR * sr * cv * 0.20;
+    if (y + sd <= horizonYears) s2[y + sd] += s2Backend;
+  }
+
+  // 3-year cash
+  const s1_3yr = s1.slice(1, 4).reduce((a, b) => a + b, 0);
+  const s2_3yr = s2.slice(1, 4).reduce((a, b) => a + b, 0);
+
+  // Total lifetime
+  const s1_total = s1.reduce((a, b) => a + b, 0);
+  const s2_total = s2.reduce((a, b) => a + b, 0);
+
+  // NPV
+  let s1_npv = 0, s2_npv = 0;
+  for (let y = 1; y <= horizonYears; y++) {
+    s1_npv += s1[y] / Math.pow(1 + dr, y);
+    s2_npv += s2[y] / Math.pow(1 + dr, y);
+  }
+
+  document.getElementById('s1-cash').textContent = fmt(s1_3yr);
+  document.getElementById('s1-total').textContent = fmt(s1_total);
+  document.getElementById('s1-npv').textContent = fmt(s1_npv);
+
+  document.getElementById('s2-cash').textContent = fmt(s2_3yr);
+  document.getElementById('s2-cash').style.color = s2_3yr < 0 ? 'var(--color-text-danger)' : 'inherit';
+  document.getElementById('s2-total').textContent = fmt(s2_total);
+  document.getElementById('s2-npv').textContent = fmt(s2_npv);
+
+  // Cash flow table
+  const tbody = document.getElementById('cashflow-body');
+  tbody.innerHTML = '';
+  for (let y = 1; y <= horizonYears; y++) {
+    const row = document.createElement('tr');
+    row.style.borderBottom = '0.5px solid var(--color-border-tertiary)';
+    const delta = s2[y] - s1[y];
+    row.innerHTML = `
+      <td style="padding: 6px 4px;">Y${y}${y > 3 ? ' (backend)' : ''}</td>
+      <td style="text-align: right; padding: 6px 4px; font-variant-numeric: tabular-nums;">${fmt(s1[y])}</td>
+      <td style="text-align: right; padding: 6px 4px; font-variant-numeric: tabular-nums; color: ${s2[y] < 0 ? 'var(--color-text-danger)' : 'inherit'};">${fmt(s2[y])}</td>
+      <td style="text-align: right; padding: 6px 4px; font-variant-numeric: tabular-nums; color: var(--color-text-tertiary);">${fmt(delta)}</td>
+    `;
+    tbody.appendChild(row);
+  }
+
+  // Recommendation
+  const npvDelta = s2_npv - s1_npv;
+  const winnerBox = document.getElementById('winner-box');
+  const winnerText = document.getElementById('winner-text');
+  if (s1_npv > s2_npv) {
+    winnerBox.style.background = '#EEEDFE';
+    winnerBox.style.borderLeftColor = '#7F77DD';
+    winnerText.style.color = '#3C3489';
+    winnerText.innerHTML = `<strong style="font-weight: 500;">JV wins by ${fmt(Math.abs(npvDelta))} NPV.</strong> JV captures ${fmt(s1_3yr)} in the 3-yr window vs. ${fmt(s2_3yr)} for License. License needs ${fmt(Math.abs(s2_3yr))} in working capital before any return.`;
+  } else {
+    winnerBox.style.background = '#E1F5EE';
+    winnerBox.style.borderLeftColor = '#1D9E75';
+    winnerText.style.color = '#085041';
+    winnerText.innerHTML = `<strong style="font-weight: 500;">License wins by ${fmt(Math.abs(npvDelta))} NPV.</strong> But requires ${fmt(Math.abs(s2_3yr))} in working capital before any return materializes.`;
+  }
+}
+
+['cv', 'sr', 'sd', 'dr'].forEach(id => {
+  document.getElementById(id).addEventListener('input', compute);
+});
+compute();
+</script>
